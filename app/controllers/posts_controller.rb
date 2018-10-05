@@ -16,7 +16,8 @@ class PostsController < ApplicationController
 		if @post.valid?
 			redirect_to post_path(@post)
 		else
-			redirect_back(fallback: new_post_path)	
+			# redirect_back(fallback: new_post_path)
+			redirect_to :back	
 		end
 	end
 end
