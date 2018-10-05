@@ -12,7 +12,8 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		if @post = Post.create(title: params[:title], description: params[:description])
+		@post = Post.create(title: params[:title], description: params[:description])
+		if @post.valid?
 			redirect_to post_path(@post)
 		else
 			redirect_back(fallback_location: new_post_path)	
