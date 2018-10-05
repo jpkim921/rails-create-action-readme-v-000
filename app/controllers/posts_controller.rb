@@ -17,4 +17,5 @@ class PostsController < ApplicationController
 		else
 			redirect_back(fallback_location: new_post_path)	
 		end
+	end
 end
